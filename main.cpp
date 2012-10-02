@@ -1,11 +1,15 @@
 #include <SDL/SDL.h>
 #include <GL/gl.h>
 #include <GL/glu.h>
+#include <stdlib.h>
+#include <time.h>
 #include <vector>
 
 #include "include/Ship.h"
+#include "include/Car.h"
 #include "include/Shoot.h"
 #include "include/Map.h"
+#include "include/Person.h"
 
 // Taille de la fenêtre
 #define LARGEUR 1024
@@ -13,12 +17,18 @@
 
 #define FRAMES_PER_SECOND 50
 
+#define MAX_PERSONS 15
+#define PERSON_SPAWN_TIME 10
+
 #undef main
 
 using namespace std;
 
 int main(int argc, char *argv[])
 {
+    // Initialisation du générateur de nombres aléatoires
+    srand ( time(NULL) );
+
     // Initialisation de SDL
     SDL_Init(SDL_INIT_VIDEO);
 
@@ -48,10 +58,17 @@ int main(int argc, char *argv[])
     Uint32 shoot_now; // heure actuelle
 
     // Vaisseau
-    Ship ship(300, 200);
+    Car ship(LARGEUR / 2, HAUTEUR / 2);
 
     // Tirs
-    vector<Shoot> shoots;
+    vector<Shoot *> shoots;
+
+    // Passants
+    vector<Person *> persons;
+
+    // Gestion des passants
+    Uint32 next_person_time = 0 ; // variable enregistrant le moment du dernier tir
+    Uint32 person_now; // heure actuelle
 
     // Carte
     Map map;
@@ -85,15 +102,24 @@ int main(int argc, char *argv[])
                         shoot_now = SDL_GetTicks();
                         if ( next_shoot_time <= shoot_now ) {
                             next_shoot_time = shoot_now + 100;
-                            // création du tir ici
-                            Shoot shoot(ship.GetX(), ship.GetY(), ship.GetAngle());
-                            shoots.push_back(shoot);
+
+                            // Création du tir ici
+                            shoots.push_back(ship.Fire());
                         }
+                        break;
+
+                    default:
+
                         break;
                 }
                 break;
+
+            default:
+
+                break;
         }
 
+        // Images par seconde
         current_time = SDL_GetTicks();
         while (current_time - last_time < (1000/FRAMES_PER_SECOND)) {
             // On se met en pause le temps voulu
@@ -103,25 +129,64 @@ int main(int argc, char *argv[])
 
         last_time = SDL_GetTicks();
 
-        // On efface la fenêtre
-        glClear(GL_COLOR_BUFFER_BIT);
-
-        map.Draw(0, LARGEUR, 0, HAUTEUR);
-
+        // Maj de la voiture
         ship.UpdatePositions(0, LARGEUR, 0, HAUTEUR);
-        ship.Draw();
 
+        // Maj des tirs
         for (int i = 0; i < shoots.size(); i++)
         {
-            if (shoots[i].IsOut(0, LARGEUR, 0, HAUTEUR)) {
-                //delete &shoots[i];
+            if (shoots[i]->IsOut(0, LARGEUR, 0, HAUTEUR)) {
+                delete shoots[i];
                 shoots.erase(shoots.begin() + i);
                 i--;
             } else {
-                shoots[i].UpdatePositions();
-                shoots[i].Draw();
+                shoots[i]->UpdatePositions();
+                shoots[i]->Draw();
             }
         }
+
+        // Ajout de passants
+        person_now = SDL_GetTicks();
+        if ( next_person_time <= person_now ) {
+            next_person_time = person_now + PERSON_SPAWN_TIME;
+
+            // Création du passant ici
+            persons.push_back(new Person(0, LARGEUR, 0, HAUTEUR));
+        }
+
+        // Maj des passants selon collision avec voiture ou balle
+        for (int i = 0; i < persons.size(); i++)
+        {
+            persons[i]->UpdatePositions(0, LARGEUR, 0, HAUTEUR);
+
+            if (persons[i]->IsAlive() && ship.Collision(persons[i]->GetX(), persons[i]->GetY()))
+                persons[i]->SetAlive(false);
+
+            if (persons[i]->IsAlive())
+                for (int j = 0; j < shoots.size(); j++)
+                    if (persons[i]->Collision(shoots[j]->GetX(), shoots[j]->GetY()))
+                        persons[i]->SetAlive(false);
+        }
+
+        // On efface la fenêtre
+        glClear(GL_COLOR_BUFFER_BIT);
+
+        // Dessin de la map
+        map.Draw(0, LARGEUR, 0, HAUTEUR);
+
+        // Dessin des tirs
+        for (int i = 0; i < shoots.size(); i++) {
+            shoots[i]->Draw();
+        }
+
+        // Dessin des passants
+        for (int i = 0; i < persons.size(); i++)
+        {
+            persons[i]->Draw();
+        }
+
+        // Dessin de la voiture
+        ship.Draw();
 
         // Affichage (en double buffering)
         glFlush();

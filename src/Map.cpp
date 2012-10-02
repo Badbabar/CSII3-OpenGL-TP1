@@ -20,7 +20,7 @@ void Map::Draw(double minX, double maxX, double minY, double maxY)
 
     double chunk = (maxX - minX) / 48;
 
-    glColor3ub(0, 180, 0);
+    glColor3ub(0, 130, 0);
 
     // Dessin de l'herbe
     glBegin(GL_QUADS);

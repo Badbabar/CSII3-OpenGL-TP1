@@ -39,3 +39,82 @@
 
 1349101195 c:\users\camille\music\documents\epsi\csii 3\3d\tp 1 - spaceship\include\map.h
 
+1349171574 source:c:\users\camille\music\documents\epsi\csii 3\3d\csii3-opengl-tp1\src\map.cpp
+	<GL/gl.h>
+	<GL/glu.h>
+	"../include/Map.h"
+
+1349101195 c:\users\camille\music\documents\epsi\csii 3\3d\csii3-opengl-tp1\include\map.h
+
+1349190203 source:c:\users\camille\music\documents\epsi\csii 3\3d\csii3-opengl-tp1\src\person.cpp
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+	<math.h>
+	<time.h>
+	"../include/Person.h"
+	"../include/Point.h"
+	"../include/Color.h"
+
+1349190186 c:\users\camille\music\documents\epsi\csii 3\3d\csii3-opengl-tp1\include\person.h
+	<vector>
+	"Color.h"
+	"Blood.h"
+
+1349190638 source:c:\users\camille\music\documents\epsi\csii 3\3d\csii3-opengl-tp1\src\ship.cpp
+	<GL/gl.h>
+	<GL/glu.h>
+	<math.h>
+	"../include/Ship.h"
+	"../include/Shoot.h"
+	"../include/Point.h"
+
+1349184866 c:\users\camille\music\documents\epsi\csii 3\3d\csii3-opengl-tp1\include\ship.h
+	"../include/Shoot.h"
+
+1349186584 source:c:\users\camille\music\documents\epsi\csii 3\3d\csii3-opengl-tp1\src\shoot.cpp
+	<GL/gl.h>
+	<GL/glu.h>
+	<math.h>
+	"../include/Shoot.h"
+	"../include/Point.h"
+
+1349186565 c:\users\camille\music\documents\epsi\csii 3\3d\csii3-opengl-tp1\include\shoot.h
+
+1349190718 source:c:\users\camille\music\documents\epsi\csii 3\3d\csii3-opengl-tp1\main.cpp
+	<SDL/SDL.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+	<time.h>
+	<vector>
+	"include/Ship.h"
+	"include/Car.h"
+	"include/Shoot.h"
+	"include/Map.h"
+	"include/Person.h"
+
+1349171851 source:c:\users\camille\music\documents\epsi\csii 3\3d\csii3-opengl-tp1\src\car.cpp
+	<GL/gl.h>
+	<GL/glu.h>
+	"../include/Car.h"
+
+1349170686 c:\users\camille\music\documents\epsi\csii 3\3d\csii3-opengl-tp1\include\car.h
+	"../include/Ship.h"
+
+1349185277 source:c:\users\camille\music\documents\epsi\csii 3\3d\csii3-opengl-tp1\src\point.cpp
+	"../include/Point.h"
+
+1349185252 c:\users\camille\music\documents\epsi\csii 3\3d\csii3-opengl-tp1\include\point.h
+
+1349188941 c:\users\camille\music\documents\epsi\csii 3\3d\csii3-opengl-tp1\include\color.h
+
+1349188631 source:c:\users\camille\music\documents\epsi\csii 3\3d\csii3-opengl-tp1\src\color.cpp
+	"../include/Color.h"
+
+1349189782 c:\users\camille\music\documents\epsi\csii 3\3d\csii3-opengl-tp1\include\blood.h
+	"../include/Point.h"
+
+1349189739 source:c:\users\camille\music\documents\epsi\csii 3\3d\csii3-opengl-tp1\src\blood.cpp
+	"../include/Blood.h"
+

@@ -1,6 +1,7 @@
 #ifndef SHIP_H
 #define SHIP_H
 
+#include "../include/Shoot.h"
 
 class Ship
 {
@@ -17,6 +18,8 @@ class Ship
         double GetX();
         double GetY();
         double GetAngle();
+        Shoot * Fire();
+        bool Collision(double x, double y);
     protected:
         double x;
         double y;
