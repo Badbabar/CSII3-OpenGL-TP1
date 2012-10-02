@@ -1,0 +1,41 @@
+# depslib dependency file v1.0
+1349101433 source:c:\users\camille\music\documents\epsi\csii 3\3d\tp 1 - spaceship\main.cpp
+	<SDL/SDL.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<vector>
+	"include/Ship.h"
+	"include/Shoot.h"
+	"include/Map.h"
+
+1349098942 source:c:\users\camille\music\documents\epsi\csii 3\3d\tp 1 - spaceship\src\ship.cpp
+	<GL/gl.h>
+	<GL/glu.h>
+	<math.h>
+	"../include/Ship.h"
+
+1349099024 c:\users\camille\music\documents\epsi\csii 3\3d\tp 1 - spaceship\include\ship.h
+
+1349099154 source:c:\users\camille\music\documents\epsi\csii 3\3d\tp 1 - spaceship\src\shoot.cpp
+	<GL/gl.h>
+	<GL/glu.h>
+	<math.h>
+	"../include/Shoot.h"
+
+1349098295 c:\users\camille\music\documents\epsi\csii 3\3d\tp 1 - spaceship\include\shoot.h
+
+1349100411 source:c:\users\camille\music\documents\epsi\csii 3\3d\tp 1 - spaceship\src\person.cpp
+	<GL/gl.h>
+	<GL/glu.h>
+	<math.h>
+	"../include/Person.h"
+
+1349100401 c:\users\camille\music\documents\epsi\csii 3\3d\tp 1 - spaceship\include\person.h
+
+1349102253 source:c:\users\camille\music\documents\epsi\csii 3\3d\tp 1 - spaceship\src\map.cpp
+	<GL/gl.h>
+	<GL/glu.h>
+	"../include/Map.h"
+
+1349101195 c:\users\camille\music\documents\epsi\csii 3\3d\tp 1 - spaceship\include\map.h
+

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Debug" />
+	<File name="include\Ship.h" open="1" top="0" tabpos="2">
+		<Cursor position="457" topLine="0" />
+	</File>
+	<File name="main.cpp" open="1" top="0" tabpos="1">
+		<Cursor position="1307" topLine="38" />
+	</File>
+	<File name="src\Map.cpp" open="1" top="1" tabpos="6">
+		<Cursor position="872" topLine="23" />
+	</File>
+	<File name="src\Person.cpp" open="1" top="0" tabpos="5">
+		<Cursor position="260" topLine="7" />
+	</File>
+	<File name="src\Ship.cpp" open="1" top="0" tabpos="3">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="src\Shoot.cpp" open="1" top="0" tabpos="4">
+		<Cursor position="253" topLine="12" />
+	</File>
+</CodeBlocks_layout_file>
