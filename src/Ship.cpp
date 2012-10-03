@@ -143,24 +143,25 @@ bool Ship::Collision(double x, double y)
 {
     // Box normale quand angle = 0
     Point points[] = {
-        Point(-60 + this->x, 30 + this->y),
-        Point(-60 + this->x, -30 + this->y),
-        Point(60 + this->x, -30 + this->y),
-        Point(60 + this->x, 30 + this->y),
+        Point(-60, 30),
+        Point(-60, -30),
+        Point(60, -30),
+        Point(60, 30),
     };
 
     int nbPoints = 4;
 
     Point A, B, D, T;
-    double d;
+    double d, theta, x2, y2;
 
     // Calcul de points selon l'angle
     for(int i = 0; i < nbPoints; i++)
     {
-        d = sqrt(points[i].x * points[i].x + points[i].y * points[i].y);
-        points[i].x = cos(angle*M_PI/180) * d;
-        points[i].y = sin(angle*M_PI/180) * d; // @todo finir
-        std::cout << d << std::endl;
+        theta = angle * M_PI / 180;
+        x2 = cos(theta) * points[i].x - sin(theta) * points[i].y;
+        y2 = sin(theta) * points[i].x + cos(theta) * points[i].y;
+        points[i].x = x2 + this->x;
+        points[i].y = y2 + this->y;
     }
 
     // Vérification de la collision

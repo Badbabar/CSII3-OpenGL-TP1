@@ -46,7 +46,7 @@
 
 1349101195 c:\users\camille\music\documents\epsi\csii 3\3d\csii3-opengl-tp1\include\map.h
 
-1349190203 source:c:\users\camille\music\documents\epsi\csii 3\3d\csii3-opengl-tp1\src\person.cpp
+1349194603 source:c:\users\camille\music\documents\epsi\csii 3\3d\csii3-opengl-tp1\src\person.cpp
 	<GL/gl.h>
 	<GL/glu.h>
 	<stdlib.h>
@@ -61,10 +61,11 @@
 	"Color.h"
 	"Blood.h"
 
-1349190638 source:c:\users\camille\music\documents\epsi\csii 3\3d\csii3-opengl-tp1\src\ship.cpp
+1349194430 source:c:\users\camille\music\documents\epsi\csii 3\3d\csii3-opengl-tp1\src\ship.cpp
 	<GL/gl.h>
 	<GL/glu.h>
 	<math.h>
+	<iostream>
 	"../include/Ship.h"
 	"../include/Shoot.h"
 	"../include/Point.h"
@@ -81,7 +82,7 @@
 
 1349186565 c:\users\camille\music\documents\epsi\csii 3\3d\csii3-opengl-tp1\include\shoot.h
 
-1349190718 source:c:\users\camille\music\documents\epsi\csii 3\3d\csii3-opengl-tp1\main.cpp
+1349194484 source:c:\users\camille\music\documents\epsi\csii 3\3d\csii3-opengl-tp1\main.cpp
 	<SDL/SDL.h>
 	<GL/gl.h>
 	<GL/glu.h>

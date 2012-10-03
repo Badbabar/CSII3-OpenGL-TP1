@@ -18,7 +18,7 @@
 #define FRAMES_PER_SECOND 50
 
 #define MAX_PERSONS 15
-#define PERSON_SPAWN_TIME 10
+#define PERSON_SPAWN_TIME 1000
 
 #undef main
 

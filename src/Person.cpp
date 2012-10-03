@@ -162,16 +162,26 @@ double Person::GetY()
 bool Person::Collision(double x, double y)
 {
     Point points[] = {
-        Point(-4 + this->x, -12 + this->y),
-        Point(4 + this->x, -12 + this->y),
-        Point(4 + this->x, 12 + this->y),
-        Point(-4 + this->x, 12 + this->y),
+        Point(-4, -12),
+        Point(4, -12),
+        Point(4, 12),
+        Point(-4, 12),
     };
 
     int nbPoints = 4;
 
     Point A, B, D, T;
-    double d;
+    double d, theta, x2, y2;
+
+    // Calcul de points selon l'angle
+    for(int i = 0; i < nbPoints; i++)
+    {
+        theta = angle * M_PI / 180;
+        x2 = cos(theta) * points[i].x - sin(theta) * points[i].y;
+        y2 = sin(theta) * points[i].x + cos(theta) * points[i].y;
+        points[i].x = x2 + this->x;
+        points[i].y = y2 + this->y;
+    }
 
     for(int i = 0; i < nbPoints; i++)
     {

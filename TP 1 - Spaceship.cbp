@@ -38,13 +38,21 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="include\Blood.h" />
+		<Unit filename="include\Car.h" />
+		<Unit filename="include\Color.h" />
 		<Unit filename="include\Map.h" />
 		<Unit filename="include\Person.h" />
+		<Unit filename="include\Point.h" />
 		<Unit filename="include\Ship.h" />
 		<Unit filename="include\Shoot.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src\Blood.cpp" />
+		<Unit filename="src\Car.cpp" />
+		<Unit filename="src\Color.cpp" />
 		<Unit filename="src\Map.cpp" />
 		<Unit filename="src\Person.cpp" />
+		<Unit filename="src\Point.cpp" />
 		<Unit filename="src\Ship.cpp" />
 		<Unit filename="src\Shoot.cpp" />
 		<Extensions>
